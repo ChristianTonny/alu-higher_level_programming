@@ -1,7 +1,12 @@
 #!/usr/bin/python3
 if __name__ == "__main__":
-    import hidden_4
-    names = dir(hidden_4)
-    for name in sorted(names):
-        if not name.startswith("__"):
-            print(name)
+    import sys
+
+    total = 0
+    for arg in sys.argv[1:]:
+        try:
+            total += int(arg)
+        except ValueError:
+            pass  # Ignore non-integer arguments
+
+    print(total)#!/usr/bin/python3
