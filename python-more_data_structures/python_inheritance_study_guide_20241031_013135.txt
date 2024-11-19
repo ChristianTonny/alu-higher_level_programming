@@ -1,0 +1,132 @@
+Python Inheritance Study Guide
+=============================
+Created on: Thu 31 Oct 2024 01:31:35 AM PDT
+
+### File: 0-square_matrix_simple.py ###
+Purpose: def square_matrix_simple(matrix=[]):
+
+Code:
+
+
+---------------------------------------
+
+### File: 100-weight_average.py ###
+Purpose: def weight_average(my_list=[]):
+
+Code:
+
+
+---------------------------------------
+
+### File: 101-square_matrix_map.py ###
+Purpose: def square_matrix_map(matrix=[]):
+
+Code:
+
+
+---------------------------------------
+
+### File: 102-complex_delete.py ###
+Purpose: def complex_delete(a_dictionary, value):
+
+Code:
+
+
+---------------------------------------
+
+### File: 10-best_score.py ###
+Purpose: def best_score(a_dictionary):
+
+Code:
+
+
+---------------------------------------
+
+### File: 11-multiply_list_map.py ###
+Purpose: def multiply_list_map(my_list=[], number=0):
+
+Code:
+
+
+---------------------------------------
+
+### File: 12-roman_to_int.py ###
+Purpose: def roman_to_int(roman_string):
+
+Code:
+
+
+---------------------------------------
+
+### File: 1-search_replace.py ###
+Purpose: def search_replace(my_list, search, replace):
+
+Code:
+
+
+---------------------------------------
+
+### File: 2-uniq_add.py ###
+Purpose: def uniq_add(my_list=[]):
+
+Code:
+
+
+---------------------------------------
+
+### File: 3-common_elements.py ###
+Purpose: def common_elements(set_1, set_2):
+
+Code:
+
+
+---------------------------------------
+
+### File: 4-only_diff_elements.py ###
+Purpose: def only_diff_elements(set_1, set_2):
+
+Code:
+
+
+---------------------------------------
+
+### File: 5-number_keys.py ###
+Purpose: def number_keys(a_dictionary):
+
+Code:
+
+
+---------------------------------------
+
+### File: 6-print_sorted_dictionary.py ###
+Purpose: def print_sorted_dictionary(a_dictionary):
+
+Code:
+
+
+---------------------------------------
+
+### File: 7-update_dictionary.py ###
+Purpose: def update_dictionary(a_dictionary, key, value):
+
+Code:
+
+
+---------------------------------------
+
+### File: 8-simple_delete.py ###
+Purpose: def simple_delete(a_dictionary, key=""):
+
+Code:
+
+
+---------------------------------------
+
+### File: 9-multiply_by_2.py ###
+Purpose: def multiply_by_2(a_dictionary):
+
+Code:
+
+
+---------------------------------------
+

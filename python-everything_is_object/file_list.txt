@@ -1,0 +1,603 @@
+=================== PYTHON FILES ===================
+=== Contents of 100-magic_string.py ===
+#!/usr/bin/python3
+def magic_string():
+    magic_string.counter = getattr(magic_string, "counter", 0) + 1
+    return ", ".join(["Holberton"] * magic_string.counter)
+
+-----------------------------------
+
+=== Contents of 101-locked_class.py ===
+#!/usr/bin/python3
+"""Module that defines the LockedClass.
+
+This module contains a class that prevents the user from dynamically
+creating new instance attributes, except if the new instance
+attribute is called first_name.
+"""
+
+
+class LockedClass:
+    """A class that only allows the creation of first_name attribute.
+
+    This class uses __slots__ to restrict the creation of attributes
+    to only first_name.
+
+    Attributes:
+        first_name: The only allowed instance attribute
+    """
+    __slots__ = ["first_name"]
+
+-----------------------------------
+
+=== Contents of 19-copy_list.py ===
+#!/usr/bin/python3
+def copy_list(l):
+    return l[:]
+
+-----------------------------------
+
+
+=================== BASH FILES ===================
+=== Contents of create_files.sh ===
+#!/bin/bash
+
+# Create directory if it doesn't exist
+mkdir -p python-everything_is_object
+
+# Change to directory
+cd python-everything_is_object
+
+# Create and populate answer files
+echo "type" > 0-answer.txt
+echo "id" > 1-answer.txt
+echo "No" > 2-answer.txt
+echo "Yes" > 3-answer.txt
+echo "Yes" > 4-answer.txt
+echo "No" > 5-answer.txt
+echo "True" > 6-answer.txt
+echo "True" > 7-answer.txt
+echo "True" > 8-answer.txt
+echo "True" > 9-answer.txt
+echo "True" > 10-answer.txt
+echo "False" > 11-answer.txt
+echo "True" > 12-answer.txt
+echo "True" > 13-answer.txt
+echo "[1, 2, 3, 4]" > 14-answer.txt
+echo "[1, 2, 3]" > 15-answer.txt
+echo "1" > 16-answer.txt
+echo "[1, 2, 3, 4]" > 17-answer.txt
+echo "[1, 2, 3]" > 18-answer.txt
+echo "def copy_list(l):
+    return l.copy()" > 19-copy_list.py
+echo "Yes" > 20-answer.txt
+echo "Yes" > 21-answer.txt
+echo "No" > 22-answer.txt
+echo "Yes" > 23-answer.txt
+echo "True" > 24-answer.txt
+echo "False" > 25-answer.txt
+echo "True" > 26-answer.txt
+echo "No" > 27-answer.txt
+echo "Yes" > 28-answer.txt
+
+# Make Python files executable
+chmod +x 19-copy_list.py
+
+# Git commands
+git add .
+git commit -m "Python everything is object tasks"
+git push
+
+-----------------------------------
+
+=== Contents of fix_tasks.sh ===
+#!/bin/bash
+
+# Update 100-magic_string.py
+echo 'def magic_string():
+    magic_string.counter = getattr(magic_string, "counter", 0) + 1
+    return ", ".join(["BestSchool"] * magic_string.counter)
+' > 100-magic_string.py
+
+# Update 101-locked_class.py
+echo 'class LockedClass:
+    """A class that only allows creating first_name attribute."""
+    __slots__ = ["first_name"]
+' > 101-locked_class.py
+
+# Update Task 32 files
+echo "0" > 103-line1.txt
+echo "0" > 103-line2.txt
+
+# Update Task 33 files
+echo "1" > 104-line1.txt
+echo "1" > 104-line2.txt
+echo "Yes" > 104-line3.txt
+echo "Yes" > 104-line4.txt
+echo "1" > 104-line5.txt
+
+# Git commands
+git add .
+git commit -m "Fix Python everything is object tasks"
+git push
+
+-----------------------------------
+
+=== Contents of python-everything_is_object.sh ===
+#!/bin/bash
+
+# Fix 100-magic_string.py - it needs to return "Holberton" instead of "BestSchool"
+echo '#!/usr/bin/python3
+def magic_string():
+    magic_string.counter = getattr(magic_string, "counter", 0) + 1
+    return ", ".join(["Holberton"] * magic_string.counter)' > 100-magic_string.py
+
+# Fix 101-locked_class.py - remove documentation and ensure only first_name attribute is allowed
+echo '#!/usr/bin/python3
+class LockedClass:
+    __slots__ = ["first_name"]' > 101-locked_class.py
+
+# Make Python files executable
+chmod +x 100-magic_string.py 101-locked_class.py
+
+# Git commands
+git add 100-magic_string.py 101-locked_class.py
+git commit -m "Fix Python files output and remove documentation"
+git push
+
+-----------------------------------
+
+=== Contents of set.sh ===
+#!/bin/bash
+
+# Create Python files
+echo 'def magic_string():
+    magic_string.count = getattr(magic_string, "count", 0) + 1
+    return ", ".join(["BestSchool"] * magic_string.count)' > 100-magic_string.py
+
+echo 'class LockedClass:
+    __slots__ = ["first_name"]' > 101-locked_class.py
+
+# Create answer files for Task 32
+echo "1" > 103-line1.txt
+echo "0" > 103-line2.txt
+
+# Create answer files for Task 33
+echo "1" > 104-line1.txt
+echo "0" > 104-line2.txt
+echo "No" > 104-line3.txt
+echo "Yes" > 104-line4.txt
+echo "1" > 104-line5.txt
+
+# Create answer file for Task 34
+echo "262" > 105-line1.txt
+
+# Create answer files for Task 35
+echo "1" > 106-line1.txt
+echo "0" > 106-line2.txt
+echo "No" > 106-line3.txt
+echo "Yes" > 106-line4.txt
+echo "1" > 106-line5.txt
+
+# Make Python files executable
+chmod +x 100-magic_string.py 101-locked_class.py
+
+# Git commands
+git add .
+git commit -m "Add advanced Python everything is object tasks"
+git push
+
+-----------------------------------
+
+
+=================== TEXT FILES ===================
+=== Contents of 0-answer.txt ===
+type
+
+-----------------------------------
+
+=== Contents of 103-line1.txt ===
+0
+
+-----------------------------------
+
+=== Contents of 103-line2.txt ===
+0
+
+-----------------------------------
+
+=== Contents of 104-line1.txt ===
+1
+
+-----------------------------------
+
+=== Contents of 104-line2.txt ===
+1
+
+-----------------------------------
+
+=== Contents of 104-line3.txt ===
+Yes
+
+-----------------------------------
+
+=== Contents of 104-line4.txt ===
+Yes
+
+-----------------------------------
+
+=== Contents of 104-line5.txt ===
+1
+
+-----------------------------------
+
+=== Contents of 105-line1.txt ===
+262
+
+-----------------------------------
+
+=== Contents of 106-line1.txt ===
+1
+
+-----------------------------------
+
+=== Contents of 106-line2.txt ===
+0
+
+-----------------------------------
+
+=== Contents of 106-line3.txt ===
+No
+
+-----------------------------------
+
+=== Contents of 106-line4.txt ===
+Yes
+
+-----------------------------------
+
+=== Contents of 106-line5.txt ===
+1
+
+-----------------------------------
+
+=== Contents of 10-answer.txt ===
+True
+
+-----------------------------------
+
+=== Contents of 11-answer.txt ===
+False
+
+-----------------------------------
+
+=== Contents of 12-answer.txt ===
+True
+
+-----------------------------------
+
+=== Contents of 13-answer.txt ===
+True
+
+-----------------------------------
+
+=== Contents of 14-answer.txt ===
+[1, 2, 3, 4]
+
+-----------------------------------
+
+=== Contents of 15-answer.txt ===
+[1, 2, 3]
+
+-----------------------------------
+
+=== Contents of 16-answer.txt ===
+1
+
+-----------------------------------
+
+=== Contents of 17-answer.txt ===
+[1, 2, 3, 4]
+
+-----------------------------------
+
+=== Contents of 18-answer.txt ===
+[1, 2, 3]
+
+-----------------------------------
+
+=== Contents of 1-answer.txt ===
+id
+
+-----------------------------------
+
+=== Contents of 20-answer.txt ===
+Yes
+
+-----------------------------------
+
+=== Contents of 21-answer.txt ===
+Yes
+
+-----------------------------------
+
+=== Contents of 22-answer.txt ===
+No
+
+-----------------------------------
+
+=== Contents of 23-answer.txt ===
+Yes
+
+-----------------------------------
+
+=== Contents of 24-answer.txt ===
+True
+
+-----------------------------------
+
+=== Contents of 25-answer.txt ===
+False
+
+-----------------------------------
+
+=== Contents of 26-answer.txt ===
+True
+
+-----------------------------------
+
+=== Contents of 27-answer.txt ===
+No
+
+-----------------------------------
+
+=== Contents of 28-answer.txt ===
+Yes
+
+-----------------------------------
+
+=== Contents of 2-answer.txt ===
+No
+
+-----------------------------------
+
+=== Contents of 3-answer.txt ===
+Yes
+
+-----------------------------------
+
+=== Contents of 4-answer.txt ===
+Yes
+
+-----------------------------------
+
+=== Contents of 5-answer.txt ===
+No
+
+-----------------------------------
+
+=== Contents of 6-answer.txt ===
+True
+
+-----------------------------------
+
+=== Contents of 7-answer.txt ===
+True
+
+-----------------------------------
+
+=== Contents of 8-answer.txt ===
+True
+
+-----------------------------------
+
+=== Contents of 9-answer.txt ===
+True
+
+-----------------------------------
+
+=== Contents of 0-answer.txt ===
+type
+
+-----------------------------------
+
+=== Contents of 103-line1.txt ===
+0
+
+-----------------------------------
+
+=== Contents of 103-line2.txt ===
+0
+
+-----------------------------------
+
+=== Contents of 104-line1.txt ===
+1
+
+-----------------------------------
+
+=== Contents of 104-line2.txt ===
+1
+
+-----------------------------------
+
+=== Contents of 104-line3.txt ===
+Yes
+
+-----------------------------------
+
+=== Contents of 104-line4.txt ===
+Yes
+
+-----------------------------------
+
+=== Contents of 104-line5.txt ===
+1
+
+-----------------------------------
+
+=== Contents of 105-line1.txt ===
+262
+
+-----------------------------------
+
+=== Contents of 106-line1.txt ===
+1
+
+-----------------------------------
+
+=== Contents of 106-line2.txt ===
+0
+
+-----------------------------------
+
+=== Contents of 106-line3.txt ===
+No
+
+-----------------------------------
+
+=== Contents of 106-line4.txt ===
+Yes
+
+-----------------------------------
+
+=== Contents of 106-line5.txt ===
+1
+
+-----------------------------------
+
+=== Contents of 10-answer.txt ===
+True
+
+-----------------------------------
+
+=== Contents of 11-answer.txt ===
+False
+
+-----------------------------------
+
+=== Contents of 12-answer.txt ===
+True
+
+-----------------------------------
+
+=== Contents of 13-answer.txt ===
+True
+
+-----------------------------------
+
+=== Contents of 14-answer.txt ===
+[1, 2, 3, 4]
+
+-----------------------------------
+
+=== Contents of 15-answer.txt ===
+[1, 2, 3]
+
+-----------------------------------
+
+=== Contents of 16-answer.txt ===
+1
+
+-----------------------------------
+
+=== Contents of 17-answer.txt ===
+[1, 2, 3, 4]
+
+-----------------------------------
+
+=== Contents of 18-answer.txt ===
+[1, 2, 3]
+
+-----------------------------------
+
+=== Contents of 1-answer.txt ===
+id
+
+-----------------------------------
+
+=== Contents of 20-answer.txt ===
+Yes
+
+-----------------------------------
+
+=== Contents of 21-answer.txt ===
+Yes
+
+-----------------------------------
+
+=== Contents of 22-answer.txt ===
+No
+
+-----------------------------------
+
+=== Contents of 23-answer.txt ===
+Yes
+
+-----------------------------------
+
+=== Contents of 24-answer.txt ===
+True
+
+-----------------------------------
+
+=== Contents of 25-answer.txt ===
+False
+
+-----------------------------------
+
+=== Contents of 26-answer.txt ===
+True
+
+-----------------------------------
+
+=== Contents of 27-answer.txt ===
+No
+
+-----------------------------------
+
+=== Contents of 28-answer.txt ===
+Yes
+
+-----------------------------------
+
+=== Contents of 2-answer.txt ===
+No
+
+-----------------------------------
+
+=== Contents of 3-answer.txt ===
+Yes
+
+-----------------------------------
+
+=== Contents of 4-answer.txt ===
+Yes
+
+-----------------------------------
+
+=== Contents of 5-answer.txt ===
+No
+
+-----------------------------------
+
+=== Contents of 6-answer.txt ===
+True
+
+-----------------------------------
+
+=== Contents of 7-answer.txt ===
+True
+
+-----------------------------------
+
+=== Contents of 8-answer.txt ===
+True
+
+-----------------------------------
+
+=== Contents of 9-answer.txt ===
+True
+
+-----------------------------------
+
