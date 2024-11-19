@@ -1,3 +1,3 @@
 #!/bin/bash
-# Send a GET request to a given URL with a header variable.
-curl -sH "X-HolbertonSchool-User-Id: 98" "$1"
+# Send a GET request with a header, and output verbose response for debugging.
+curl -v -H "X-HolbertonSchool-User-Id: 98" "http://$1"
