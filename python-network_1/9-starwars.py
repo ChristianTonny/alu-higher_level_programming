@@ -17,7 +17,7 @@ if __name__ == "__main__":
 
     # Set up the authentication using Basic Auth with token
     # The token is used as the password
-    auth = (username, token)
+    auth = (ChristianTonny, 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)
 
     try:
         # Make GET request to GitHub API with authentication
