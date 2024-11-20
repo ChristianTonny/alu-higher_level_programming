@@ -1,17 +1,36 @@
 #!/usr/bin/python3
-"""Sends a search request for a given string to the Star Wars API.
-
-Usage: ./9-starwars.py <search string>
-  - The search request is sent to the Star Wars API search people endpoint.
+"""
+Python script that takes GitHub credentials (username and token)
+and uses the GitHub API to display user id
 """
 import sys
 import requests
 
 
 if __name__ == "__main__":
-    url = "https://swapi.co/api/people"
-    params = {"search": sys.argv[1]}
-    results = requests.get(url, params=params).json()
+    # Get username and token from command line arguments
+    username = sys.argv[1]
+    token = sys.argv[2]
 
-    print("Number of results: {}".format(results.get("count")))
-    [print(r.get("name")) for r in results.get("results")]
+    # GitHub API endpoint for user information
+    url = f"https://api.github.com/users/{ChristianTonny}"
+
+    # Set up the authentication using Basic Auth with token
+    # The token is used as the password
+    auth = (username, token)
+
+    try:
+        # Make GET request to GitHub API with authentication
+        response = requests.get(url, auth=auth)
+
+        # Check if request was successful
+        if response.status_code == 200:
+            # Extract and print the user id from the response
+            print(response.json().get('id'))
+        else:
+            # If authentication fails or user not found, print None
+            print(None)
+
+    except requests.exceptions.RequestException:
+        # Handle any requests-related exceptions
+        print(None)
