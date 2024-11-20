@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""Fetched from https://intranet.hbtn.io/status."""
 import requests
 
 
