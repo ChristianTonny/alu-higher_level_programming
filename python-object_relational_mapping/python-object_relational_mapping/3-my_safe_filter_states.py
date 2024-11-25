@@ -1,5 +1,5 @@
-# !/usr/bin/python3
-"""Script that lists all states from the database hbtn_0e_0_usa"""
+#!/usr/bin/python3
+"""Script that displays values in states table (safe from MySQL injection)"""
 import MySQLdb
 import sys
 
@@ -12,7 +12,8 @@ if __name__ == "__main__":
         db=sys.argv[3]
     )
     cursor = db.cursor()
-    cursor.execute("SELECT * FROM states ORDER BY states.id")
+    cursor.execute("SELECT * FROM states WHERE name = %s ORDER BY states.id",
+                  (sys.argv[4],))
     rows = cursor.fetchall()
     for row in rows:
         print(row)
