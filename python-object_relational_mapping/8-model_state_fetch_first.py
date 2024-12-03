@@ -1,19 +1,29 @@
 #!/usr/bin/python3
-"""Script that prints the first State object from the database"""
-from model_state import Base, State
-from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
+"""
+a script that prints the first State object from the database
+"""
+
+
 import sys
+from model_state import Base, State
+from sqlalchemy.orm import Session
+from sqlalchemy import create_engine
+
 
 if __name__ == "__main__":
-    engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'.format(
-        sys.argv[1], sys.argv[2], sys.argv[3]), pool_pre_ping=True)
-    Session = sessionmaker(bind=engine)
-    session = Session()
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(
+                        sys.argv[1], sys.argv[2], sys.argv[3]),
+                        pool_pre_ping=True
+                    )
 
-    state = session.query(State).order_by(State.id).first()
-    if state:
-        print(f"{state.id}: {state.name}")
+    Base.metadata.create_all(engine)
+
+    session = Session(engine)
+
+    row = session.query(State).first()
+
+    if row:
+        print("{}: {}".format(row.id, row.name))
     else:
         print("Nothing")
     session.close()
