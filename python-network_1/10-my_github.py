@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
-Python script that takes GitHub credentials (username and token)
-and uses the GitHub API to display user id
+Python script that takes GitHub credentials
+and uses the GitHub API to display the user id
 """
 from requests import get, auth
 import sys
